@@ -708,7 +708,10 @@ static int const RCTVideoUnset = -1;
         if (!CGRectEqualToRect(oldRect, newRect)) {
           if (CGRectEqualToRect(newRect, [UIScreen mainScreen].bounds)) {
             NSLog(@"in fullscreen");
-          } else NSLog(@"not fullscreen");
+          } else {
+            NSLog(@"not fullscreen");
+            [[UIApplication sharedApplication] setStatusBarHidden:NO];
+          }
 
           [self.reactViewController.view setFrame:[UIScreen mainScreen].bounds];
           [self.reactViewController.view setNeedsLayout];
