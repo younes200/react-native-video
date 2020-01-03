@@ -713,6 +713,7 @@ static int const RCTVideoUnset = -1;
           } else {
             NSLog(@"not fullscreen");
             _isInFullScreen = NO;
+            [[UIApplication sharedApplication] setStatusBarHidden:NO];
           }
 
           [self.reactViewController.view setFrame:[UIScreen mainScreen].bounds];
