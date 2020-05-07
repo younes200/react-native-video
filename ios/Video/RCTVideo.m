@@ -713,7 +713,10 @@ static int const RCTVideoUnset = -1;
           } else {
             NSLog(@"not fullscreen");
             _isInFullScreen = NO;
-            [[UIApplication sharedApplication] setStatusBarHidden:NO];
+            // For ios <= 12.4, must delay 0.5sec to take effect
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+              [[UIApplication sharedApplication] setStatusBarHidden:NO];
+            });
           }
 
           dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
