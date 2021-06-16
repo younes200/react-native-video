@@ -126,7 +126,7 @@ public final class ExoPlayerView extends FrameLayout {
      * {@link SimpleExoPlayer#addVideoListener} method of the player will be called and previous
      * assignments are overridden.
      *
-     * @param player The {@link SimpleExoPlayer} to use.
+     * @param player The {@link SimpleExoPlayer} to use.g
      */
     public void setPlayer(SimpleExoPlayer player) {
         if (this.player == player) {
